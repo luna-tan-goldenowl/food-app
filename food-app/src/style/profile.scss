@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Squada+One&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.image-profile {
+  position: relative;
+}
+
+.cover-image {
+  width: 100vw;
+  height: auto;
+  object-fit: contain;
+  background-size: cover;
+}
+
+.avatar-image {
+  position: absolute;
+  width: calc(100vw / 5);
+  top: 74%;
+  left: 5%;
+}
+
+.title-personal {
+  color: #1ac073;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.tab {
+  position: absolute;
+  top: 76%;
+  left: 30%;
+}
+
+.tab-profile {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  width: 100px;
+  height: 28px;
+  border: solid 1px #f3ba00;
+  color: #929292;
+  background-color: #fff;
+}
+
+.tab-history {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  width: 100px;
+  height: 28px;
+  border: solid 1px #f3ba00;
+  color: #929292;
+  background-color: #fff;
+}
+
+.active {
+  background-color: #f3ba00;
+  color: #000;
+}
