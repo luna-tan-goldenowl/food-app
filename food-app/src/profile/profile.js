@@ -12,10 +12,10 @@ function Profile() {
       <div className="image-profile">
         <img className="cover-image" src={coverImage} alt="cover image" />
         <img className="avatar-image" src={avatar} alt="avatar" />
-      </div>
-      <div className="tab">
-        <button className="tab-profile active">Profile</button>
-        <button className="tab-history">Odder History</button>
+        <div className="tab">
+          <button className="tab-profile active">Profile</button>
+          <button className="tab-history">Odder History</button>
+        </div>
       </div>
       <div className="content">
         <p className="title-personal">Personal Information</p>

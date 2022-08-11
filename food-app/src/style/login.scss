@@ -95,6 +95,10 @@
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
+.button {
+  cursor: pointer;
+}
+
 .verify-user {
   display: flex;
   flex-direction: row;
@@ -123,4 +127,17 @@
 
 .button-signup {
   margin-top: 26px;
+}
+
+.button-social {
+  border: none;
+  background-color: transparent;
+}
+
+.link-to {
+  margin-top: 20px;
+}
+
+.link-to-link {
+  text-decoration: none;
 }

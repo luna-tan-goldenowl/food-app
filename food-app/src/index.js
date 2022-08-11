@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
+import Login from './authen/login';
 import reportWebVitals from './reportWebVitals';
-import OrderHistory from './profile/orderHistory';
+
+//import OrderHistory from './profile/orderHistory';
+//import Profile from './profile/profile';
+import Landing from './landing/landing';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <OrderHistory />
+    <BrowserRouter>
+      <Landing />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

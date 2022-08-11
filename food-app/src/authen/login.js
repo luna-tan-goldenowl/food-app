@@ -1,8 +1,24 @@
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from '../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import '../style/login.scss';
 import facebookLogo from '../assets/Facebook_logo.png';
 import googleLogo from '../assets/Google_logo.png';
 
 function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (user) navigate('/profile');
+  }, [user, loading]);
+
   return (
     <div className="container grid">
       <div className="header">
@@ -12,9 +28,23 @@ function Login() {
         <p className="title">Sign in</p>
         <p className="small-title">Sign in and start your food adventure!</p>
         <form action="">
-          <input className="input" type="text" name="email" id="email" placeholder="Email" />
+          <input
+            className="input"
+            type="text"
+            name="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            placeholder="Email"
+          />
           <br />
-          <input className="input" type="password" name="password" id="password" placeholder="Password" />
+          <input
+            className="input"
+            type="password"
+            name="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            placeholder="Password"
+          />
           <div className="verify-user">
             <div className="remember-user">
               <input className="input-checkbox" type="checkbox" name="remember " id="remember" />
@@ -22,14 +52,25 @@ function Login() {
             </div>
             <p className="remember-title">Forgot password?</p>
           </div>
-          <button className="button" type="submit">
+          <button className="button" type="submit" onClick={() => logInWithEmailAndPassword(email, password)}>
             Log in
           </button>
         </form>
         <p className="title-or">Or</p>
         <div>
-          <img className="social-logo" src={googleLogo} alt="Logo facebook" />
-          <img className="social-logo" src={facebookLogo} alt="Logo facebook" />
+          <button className="button-social" onClick={signInWithGoogle}>
+            <img className="social-logo" src={googleLogo} alt="Logo facebook" />
+          </button>
+          <button className="button-social">
+            <img className="social-logo" src={facebookLogo} alt="Logo facebook" />
+          </button>
+        </div>
+        <div className="link-to">
+          Don't have an account?{' '}
+          <Link to="/signup" className="link-to-link">
+            Sign up
+          </Link>{' '}
+          now.
         </div>
       </div>
     </div>
