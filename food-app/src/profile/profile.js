@@ -1,5 +1,5 @@
-import '../style/login.scss';
-import '../style/profile.scss';
+import React from 'react';
+import './profile.scss';
 import coverImage from '../assets/coverImage.png';
 import avatar from '../assets/avatar.png';
 

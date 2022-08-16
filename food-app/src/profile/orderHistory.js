@@ -1,5 +1,6 @@
+import React from 'react';
 import '../style/base.scss';
-import '../style/profile.scss';
+import './profile.scss';
 import coverImage from '../assets/coverImage.png';
 import avatar from '../assets/avatar.png';
 import burger from '../assets/burger.jpeg';

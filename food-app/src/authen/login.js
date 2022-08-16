@@ -1,8 +1,9 @@
+import React from 'react';
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import '../style/login.scss';
+import './login.scss';
 import facebookLogo from '../assets/Facebook_logo.png';
 import googleLogo from '../assets/Google_logo.png';
 
@@ -16,8 +17,14 @@ function Login() {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate('/profile');
+    if (user) navigate('/landing');
+    console.log(user);
   }, [user, loading]);
+
+  const onSubmit = e => {
+    e.preventDefault();
+    logInWithEmailAndPassword(email, password);
+  };
 
   return (
     <div className="container grid">
@@ -52,7 +59,7 @@ function Login() {
             </div>
             <p className="remember-title">Forgot password?</p>
           </div>
-          <button className="button" type="submit" onClick={() => logInWithEmailAndPassword(email, password)}>
+          <button className="button" type="submit" onClick={onSubmit}>
             Log in
           </button>
         </form>
@@ -66,7 +73,7 @@ function Login() {
           </button>
         </div>
         <div className="link-to">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <Link to="/signup" className="link-to-link">
             Sign up
           </Link>{' '}

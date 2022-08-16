@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { auth, registerWithEmailAndPassword, signInWithGoogle } from '../firebase';
-import '../style/login.scss';
+import './login.scss';
 import facebookLogo from '../assets/Facebook_logo.png';
 import googleLogo from '../assets/Google_logo.png';
 
@@ -17,10 +17,9 @@ function Signup() {
   };
   useEffect(() => {
     if (loading) {
-      // maybe trigger a loading screen
       return;
     }
-    if (user) navigate('/profile');
+    if (user) navigate('/landing');
   }, [user, loading]);
 
   return (
@@ -29,7 +28,7 @@ function Signup() {
         <p className="logo-name">TBayEAT</p>
       </div>
       <div className="content">
-        <p className="title">Sign in</p>
+        <p className="title">Sign up</p>
         <p className="small-title">Sign up and hop on the food journey!</p>
         <form action="">
           <input

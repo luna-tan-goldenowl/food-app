@@ -19,6 +19,7 @@ const firebaseConfig = {
   appId: '1:494330134450:web:c9ed4bf5f88f328f342eab',
   measurementId: 'G-9MFBKBMSE6'
 };
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -37,11 +38,13 @@ const signInWithGoogle = async () => {
         email: user.email
       });
     }
+    console.log(res.user);
   } catch (err) {
     console.error(err);
     alert(err.message);
   }
 };
+
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
@@ -50,22 +53,26 @@ const logInWithEmailAndPassword = async (email, password) => {
     alert(err.message);
   }
 };
+
 const registerWithEmailAndPassword = async (name, email, password, phonenumber) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
+    alert('Hello');
     await addDoc(collection(db, 'users'), {
       uid: user.uid,
       name,
       authProvider: 'local',
       email,
-      phonenumber
+      phonenumber,
+      password
     });
   } catch (err) {
     console.error(err);
     alert(err.message);
   }
 };
+
 const sendPasswordReset = async email => {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -75,9 +82,11 @@ const sendPasswordReset = async email => {
     alert(err.message);
   }
 };
+
 const logout = () => {
   signOut(auth);
 };
+
 export {
   auth,
   db,

@@ -2,19 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-// import App from './App';
+import App from './App';
 import Login from './authen/login';
 import reportWebVitals from './reportWebVitals';
-
+import Footer from './partials/footer';
 //import OrderHistory from './profile/orderHistory';
 //import Profile from './profile/profile';
-import Landing from './landing/landing';
+import Landing from './landing/index';
+import Cart from './cart-payment/cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Landing />
+      <Cart />
     </BrowserRouter>
   </React.StrictMode>
 );
