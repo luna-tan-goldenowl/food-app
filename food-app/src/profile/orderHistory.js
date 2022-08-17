@@ -4,13 +4,13 @@ import './profile.scss';
 import coverImage from '../assets/coverImage.png';
 import avatar from '../assets/avatar.png';
 import burger from '../assets/burger.jpeg';
+import Header from '../partials/header';
+import Footer from '../partials/footer';
 
 function History() {
   return (
     <div className="container">
-      <div className="header">
-        <p className="logo-name">TBayEAT</p>
-      </div>
+      <Header />
       <div className="image-profile">
         <img className="cover-image" src={coverImage} alt="cover image" />
         <img className="avatar-image" src={avatar} alt="avatar" />
@@ -159,6 +159,7 @@ function History() {
           </tr>
         </table>
       </div>
+      <Footer />
     </div>
   );
 }

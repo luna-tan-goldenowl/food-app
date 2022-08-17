@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth, logInWithEmailAndPassword, signInWithGoogle } from '../firebase';
+import { auth, logInWithEmailAndPassword, signInWithGoogle, signInWithFacebook } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
@@ -68,7 +68,7 @@ function Login() {
           <button className="button-social" onClick={signInWithGoogle}>
             <img className="social-logo" src={googleLogo} alt="Logo facebook" />
           </button>
-          <button className="button-social">
+          <button className="button-social" onClick={signInWithFacebook}>
             <img className="social-logo" src={facebookLogo} alt="Logo facebook" />
           </button>
         </div>

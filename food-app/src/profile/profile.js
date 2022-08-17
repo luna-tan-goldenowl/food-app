@@ -1,14 +1,17 @@
 import React from 'react';
 import './profile.scss';
+import Header from '../partials/header';
+import Footer from '../partials/footer';
 import coverImage from '../assets/coverImage.png';
 import avatar from '../assets/avatar.png';
 
 function Profile() {
   return (
     <div className="container grid">
-      <div className="header">
+      {/* <div className="header">
         <p className="logo-name">TBayEAT</p>
-      </div>
+      </div> */}
+      <Header />
       <div className="image-profile">
         <img className="cover-image" src={coverImage} alt="cover image" />
         <img className="avatar-image" src={avatar} alt="avatar" />
@@ -33,6 +36,7 @@ function Profile() {
           </button>
         </form>
       </div>
+      <Footer />
     </div>
   );
 }

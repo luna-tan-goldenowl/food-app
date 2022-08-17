@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800&family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=Squada+One&display=swap');
 
-html {
+.cart-container {
   background-color: #fff;
+  color: #1ac073;
+  font-family: 'ABeeZee', sans-serif;
 }
 
 .content-wrap {
@@ -12,7 +14,7 @@ html {
 
 .banner-head {
   width: 100%;
-  height: 90%;
+  height: 80vh;
   background-color: #1ac073;
   display: flex;
 }
@@ -122,8 +124,13 @@ html {
 .title-items {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   font-size: 16px;
   margin-bottom: 30px;
+  color: #1ac073;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 18px;
+  margin-bottom: 100px;
 }
 
 .black {
@@ -136,7 +143,7 @@ html {
 
 .cart-item {
   display: flex;
-  padding: 10px;
+  padding: 30px 30px 30px;
 }
 
 .itemInfor {
@@ -144,11 +151,13 @@ html {
   flex-direction: column;
   justify-content: space-between;
   margin-left: 60px;
-  margin-right: 80px;
+  margin-right: 100px;
 }
 
 th {
-  padding: 10px 0 20px;
+  padding: 10px 30px 20px;
+  font-size: 20px;
+  text-align: left;
 }
 
 .quantity {
@@ -156,6 +165,10 @@ th {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+}
+
+.image-food-item {
+  width: 200px;
 }
 
 .qty-minus,
@@ -198,7 +211,7 @@ th {
 .item-ingredient {
   line-height: 22px;
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   color: #929292;
   font-family: 'Lexend Deca', sans-serif;
@@ -206,5 +219,104 @@ th {
 
 .add-by {
   color: #929292;
+  margin-right: 10px;
   font-family: 'Lexend Deca', sans-serif;
+}
+
+.item-food {
+  padding: 10px;
+}
+
+.line-wrap {
+  width: 200%;
+  border: 1px solid #f6f7f8;
+}
+
+.pay-total {
+  margin-top: 100px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.voucher {
+  margin-left: 30px;
+}
+
+.voucher-input {
+  height: 40px;
+  width: 240px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  padding-left: 20px;
+  font-size: 16px;
+  color: #929292;
+  border: 1px solid #929292;
+}
+
+.voucher-button {
+  height: 42px;
+  font-size: 16px;
+  background-color: #1ac073;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #1ac073;
+}
+
+.total-price {
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-info {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+}
+
+.text {
+  color: #000;
+  line-height: 60px;
+}
+
+.text-total {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.line-wrap-foot {
+  margin: 30px 0;
+  border: 1px solid #f6f7f8;
+}
+
+.button-payYour {
+  border-radius: 8px;
+  height: 40px;
+  border: 1px solid #1ac073;
+  background-color: #fff;
+  color: #1ac073;
+  margin-top: 20px;
+  font-size: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.button-payAll {
+  border-radius: 8px;
+  height: 40px;
+  border: 1px solid #1ac073;
+  background-color: #1ac073;
+  color: #fff;
+  margin-top: 10px;
+  font-size: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.user-add {
+  display: flex;
+  align-items: center;
 }

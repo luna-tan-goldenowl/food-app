@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import {
   GoogleAuthProvider,
+  FacebookAuthProvider,
   getAuth,
   signInWithPopup,
   signInWithEmailAndPassword,
@@ -24,6 +25,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, googleProvider);
@@ -45,6 +47,22 @@ const signInWithGoogle = async () => {
   }
 };
 
+const signInWithFacebook = async () => {
+  try {
+    const res = await signInWithPopup(auth, googleProvider);
+    const credential = FacebookAuthProvider.credentialFromResult(res);
+    const token = credential.accessToken;
+    const user = res.user;
+  } catch (err) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // AuthCredential type that was used.
+    const credential = FacebookAuthProvider.credentialFromError(error);
+  }
+};
+
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
@@ -57,15 +75,15 @@ const logInWithEmailAndPassword = async (email, password) => {
 const registerWithEmailAndPassword = async (name, email, password, phonenumber) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
+    //await signInWithEmailAndPassword(auth, email, password);
     const user = res.user;
-    alert('Hello');
     await addDoc(collection(db, 'users'), {
       uid: user.uid,
-      name,
+      name: name,
       authProvider: 'local',
-      email,
-      phonenumber,
-      password
+      email: email,
+      phonenumber: phonenumber,
+      password: password
     });
   } catch (err) {
     console.error(err);
@@ -91,6 +109,7 @@ export {
   auth,
   db,
   signInWithGoogle,
+  signInWithFacebook,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordReset,

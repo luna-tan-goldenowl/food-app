@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
-import { auth, registerWithEmailAndPassword, signInWithGoogle } from '../firebase';
+import { useNavigate, Link } from 'react-router-dom';
+import {
+  auth,
+  registerWithEmailAndPassword,
+  signInWithGoogle,
+  logInWithEmailAndPassword,
+  signInWithFacebook
+} from '../firebase';
 import './login.scss';
 import facebookLogo from '../assets/Facebook_logo.png';
 import googleLogo from '../assets/Google_logo.png';
@@ -10,11 +16,20 @@ function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [phonenumber, setPhonenumber] = useState('');
   const [user, loading, error] = useAuthState(auth);
-  const signup = () => {
+  const navigate = useNavigate();
+  const signup = async e => {
+    e.preventDefault();
     if (!name) alert('Please enter name');
-    registerWithEmailAndPassword(name, email, password);
+    try {
+      await registerWithEmailAndPassword(name, email, password, phonenumber);
+      logInWithEmailAndPassword(email, password);
+    } catch (err) {
+      alert(err.message);
+    }
   };
+
   useEffect(() => {
     if (loading) {
       return;
@@ -66,7 +81,14 @@ function Signup() {
             placeholder="Email"
           />
           <br />
-          <input className="input" type="text" name="phone-number" id="phone-number" placeholder="Phone Number" />
+          <input
+            className="input"
+            type="text"
+            name="phone-number"
+            id="phone-number"
+            placeholder="Phone Number"
+            onChange={e => setPhonenumber(e.target.value)}
+          />
           <br />
           <button className="button button-signup" type="submit" onClick={signup}>
             Sign up
@@ -75,9 +97,9 @@ function Signup() {
         <p className="title-or">Or</p>
         <div>
           <button className="button-social" onClick={signInWithGoogle}>
-            <img className="social-logo" src={googleLogo} alt="Logo facebook" />
+            <img className="social-logo" src={googleLogo} alt="Logo google" />
           </button>
-          <button className="button-social">
+          <button className="button-social" onClick={signInWithFacebook}>
             <img className="social-logo" src={facebookLogo} alt="Logo facebook" />
           </button>
         </div>
