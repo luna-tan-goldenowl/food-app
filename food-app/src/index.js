@@ -6,8 +6,8 @@ import App from './App';
 import Login from './authen/login';
 import reportWebVitals from './reportWebVitals';
 import Footer from './partials/footer';
-//import OrderHistory from './profile/orderHistory';
-//import Profile from './profile/profile';
+import OrderHistory from './profile/orderHistory';
+import Profile from './profile/profile';
 import Landing from './landing/index';
 import Cart from './cart-payment/cart';
 
@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <OrderHistory />
     </BrowserRouter>
   </React.StrictMode>
 );

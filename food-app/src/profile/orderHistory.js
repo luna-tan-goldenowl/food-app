@@ -19,7 +19,7 @@ function History() {
           <button className="tab-history active">Odder History</button>
         </div>
       </div>
-      <div className="content content-order">
+      <div className="content-order">
         <p className="title-personal">Order History</p>
         <table className="table grid__column-7-12">
           <tr className="order">
@@ -61,9 +61,9 @@ function History() {
             </div>
             <div className="order-footer">
               <div className="line"></div>
-              <div className="total-price">
+              <div className="total-prices">
                 <p>Total: $25.34</p>
-                <button className="button btn-paid">Paid</button>
+                <button className="btn btn-paid">Paid</button>
               </div>
             </div>
           </tr>
@@ -106,9 +106,9 @@ function History() {
             </div>
             <div className="order-footer">
               <div className="line"></div>
-              <div className="total-price">
+              <div className="total-prices">
                 <p>Total: $25.34</p>
-                <button className="button btn-paid">In Process</button>
+                <button className="btn btn-paid">In Process</button>
               </div>
             </div>
           </tr>
@@ -151,15 +151,17 @@ function History() {
             </div>
             <div className="order-footer">
               <div className="line"></div>
-              <div className="total-price">
+              <div className="total-prices">
                 <p>Total: $25.34</p>
-                <button className="button btn-cancel">Cancelled</button>
+                <button className="btn btn-cancel">Cancelled</button>
               </div>
             </div>
           </tr>
         </table>
+        <div className="grid">
+          <Footer />
+        </div>
       </div>
-      <Footer />
     </div>
   );
 }

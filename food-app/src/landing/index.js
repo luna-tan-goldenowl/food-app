@@ -17,7 +17,7 @@ import React from 'react';
 
 function Landing() {
   return (
-    <div className="container grid">
+    <div className="container-landing grid">
       <Header />
       <div className="content-landing">
         <div className="banner-landing">
