@@ -39,7 +39,7 @@ function Cart() {
             <img className="image-cooking" src={cooking} alt="" />
           </div>
         </div>
-        <div className="body-content grid__column-10">
+        <div className="grid__column-10">
           <div className="title-items">
             <p className="">Home / </p>
             <p className=""> Trending / </p>
