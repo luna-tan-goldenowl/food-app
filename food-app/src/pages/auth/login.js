@@ -1,16 +1,17 @@
 import React from 'react';
-import { auth, logInWithEmailAndPassword, signInWithGoogle, signInWithFacebook } from '../firebase';
+import { auth, logInWithEmailAndPassword, signInWithGoogle, } from 'core/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './login.scss';
-import facebookLogo from '../assets/Facebook_logo.png';
-import googleLogo from '../assets/Google_logo.png';
+import facebookLogo from 'assets/image/Facebook_logo.png';
+import googleLogo from 'assets/image/Google_logo.png';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [user, loading, error] = useAuthState(auth);
+  // const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) {
@@ -27,54 +28,54 @@ function Login() {
   };
 
   return (
-    <div className="container grid">
-      <div className="header">
-        <p className="logo-name">TBayEAT</p>
+    <div className='container grid'>
+      <div className='header'>
+        <p className='logo-name'>TBayEAT</p>
       </div>
-      <div className="content">
-        <p className="title">Sign in</p>
-        <p className="small-title">Sign in and start your food adventure!</p>
-        <form action="">
+      <div className='content'>
+        <p className='title'>Sign in</p>
+        <p className='small-title'>Sign in and start your food adventure!</p>
+        <form action=''>
           <input
-            className="input"
-            type="text"
-            name="email"
+            className='input'
+            type='text'
+            name='email'
             value={email}
             onChange={e => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder='Email'
           />
           <br />
           <input
-            className="input"
-            type="password"
-            name="password"
+            className='input'
+            type='password'
+            name='password'
             value={password}
             onChange={e => setPassword(e.target.value)}
-            placeholder="Password"
+            placeholder='Password'
           />
-          <div className="verify-user">
-            <div className="remember-user">
-              <input className="input-checkbox" type="checkbox" name="remember " id="remember" />
-              <p className="remember-title">Remember me</p>
+          <div className='verify-user'>
+            <div className='remember-user'>
+              <input className='input-checkbox' type='checkbox' name='remember ' id='remember' />
+              <p className='remember-title'>Remember me</p>
             </div>
-            <p className="remember-title">Forgot password?</p>
+            <p className='remember-title'>Forgot password?</p>
           </div>
-          <button className="button" type="submit" onClick={onSubmit}>
+          <button className='button' type='submit' onClick={onSubmit}>
             Log in
           </button>
         </form>
-        <p className="title-or">Or</p>
+        <p className='title-or'>Or</p>
         <div>
-          <button className="button-social" onClick={signInWithGoogle}>
-            <img className="social-logo" src={googleLogo} alt="Logo facebook" />
+          <button className='button-social' onClick={signInWithGoogle}>
+            <img className='social-logo' src={googleLogo} alt='Logo facebook' />
           </button>
-          <button className="button-social" onClick={signInWithFacebook}>
-            <img className="social-logo" src={facebookLogo} alt="Logo facebook" />
+          <button className='button-social' >
+            <img className='social-logo' src={facebookLogo} alt='Logo facebook' />
           </button>
         </div>
-        <div className="link-to">
+        <div className='link-to'>
           Don&apos;t have an account?{' '}
-          <Link to="/signup" className="link-to-link">
+          <Link to='/signup' className='link-to-link'>
             Sign up
           </Link>{' '}
           now.

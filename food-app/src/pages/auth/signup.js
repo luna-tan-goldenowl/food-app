@@ -6,18 +6,18 @@ import {
   registerWithEmailAndPassword,
   signInWithGoogle,
   logInWithEmailAndPassword,
-  signInWithFacebook
-} from '../firebase';
+  // signInWithFacebook
+} from 'core/firebase';
 import './login.scss';
-import facebookLogo from '../assets/Facebook_logo.png';
-import googleLogo from '../assets/Google_logo.png';
+import facebookLogo from 'assets/image/Facebook_logo.png';
+import googleLogo from 'assets/image/Google_logo.png';
 
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [phonenumber, setPhonenumber] = useState('');
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   const signup = async e => {
     e.preventDefault();
@@ -38,74 +38,74 @@ function Signup() {
   }, [user, loading]);
 
   return (
-    <div className="container grid">
-      <div className="header">
-        <p className="logo-name">TBayEAT</p>
+    <div className='container grid'>
+      <div className='header'>
+        <p className='logo-name'>TBayEAT</p>
       </div>
-      <div className="content">
-        <p className="title">Sign up</p>
-        <p className="small-title">Sign up and hop on the food journey!</p>
-        <form action="">
+      <div className='content'>
+        <p className='title'>Sign up</p>
+        <p className='small-title'>Sign up and hop on the food journey!</p>
+        <form action=''>
           <input
-            className="input"
-            type="text"
-            name="user"
+            className='input'
+            type='text'
+            name='user'
             value={name}
             onChange={e => setName(e.target.value)}
-            placeholder="User name"
+            placeholder='User name'
           />
           <br />
           <input
-            className="input"
-            type="password"
-            name="password"
+            className='input'
+            type='password'
+            name='password'
             value={password}
             onChange={e => setPassword(e.target.value)}
-            placeholder="Password"
+            placeholder='Password'
           />
           <br />
           <input
-            className="input"
-            type="password"
-            name="confirm-password"
-            id="confirm-password"
-            placeholder="Confirm Password"
+            className='input'
+            type='password'
+            name='confirm-password'
+            id='confirm-password'
+            placeholder='Confirm Password'
           />
           <br />
           <input
-            className="input"
-            type="text"
-            name="email"
+            className='input'
+            type='text'
+            name='email'
             value={email}
             onChange={e => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder='Email'
           />
           <br />
           <input
-            className="input"
-            type="text"
-            name="phone-number"
-            id="phone-number"
-            placeholder="Phone Number"
+            className='input'
+            type='text'
+            name='phone-number'
+            id='phone-number'
+            placeholder='Phone Number'
             onChange={e => setPhonenumber(e.target.value)}
           />
           <br />
-          <button className="button button-signup" type="submit" onClick={signup}>
+          <button className='button button-signup' type='submit' onClick={signup}>
             Sign up
           </button>
         </form>
-        <p className="title-or">Or</p>
+        <p className='title-or'>Or</p>
         <div>
-          <button className="button-social" onClick={signInWithGoogle}>
-            <img className="social-logo" src={googleLogo} alt="Logo google" />
+          <button className='button-social' onClick={signInWithGoogle}>
+            <img className='social-logo' src={googleLogo} alt='Logo google' />
           </button>
-          <button className="button-social" onClick={signInWithFacebook}>
-            <img className="social-logo" src={facebookLogo} alt="Logo facebook" />
+          <button className='button-social'>
+            <img className='social-logo' src={facebookLogo} alt='Logo facebook' />
           </button>
         </div>
-        <div className="link-to">
+        <div className='link-to'>
           Already have an account?{' '}
-          <Link to="/" className="link-to-link">
+          <Link to='/' className='link-to-link'>
             Login
           </Link>{' '}
           now.
