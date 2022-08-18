@@ -316,3 +316,120 @@ th {
   display: flex;
   align-items: center;
 }
+
+//payment 
+
+.popup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment1 {
+  width: 66.667%;
+  border-radius: 10px;
+  background-color: #c0891a;
+  padding: 40px;
+  text-align: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.button-icon:hover {
+  cursor: pointer;
+}
+
+.title-head {
+  text-align: center;
+}
+
+.title-head h2 {
+  font-size: 30px;
+  color: #1ac073;
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: 500;
+}
+
+.step1 {
+  height: 80px;
+}
+
+.input {
+  width: 84%;
+  height: 32px;
+  border-radius: 4px;
+  border: solid 1px transparent;
+  margin-bottom: 20px;
+  background-color: #DFDEDE;
+  padding-left: 12px;
+  font-size: 12px;
+
+}
+
+.select-method {
+  text-align: left;
+  margin-left: 30px;
+  width: 86%;
+}
+
+.select-method h3 {
+  font-family: 'Lexend Deca', sans-serif;
+  color: #1ac073;
+}
+
+.payment-infor {
+  display: flex;
+}
+
+.input-address {
+  height: 70px;
+}
+
+.method {
+  display: flex;
+}
+
+.method-payment {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.method p {
+  margin-left: 20px;
+}
+
+.btn-payment {
+  width: 36%;
+  height: 50px;
+  border-radius: 8px;
+  border: solid 1px transparent;
+  background-color: #1ac073;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.method-checked {
+  background-color: #F0FAF7;
+}
+
+.input-checkbox {
+  width: 15px;
+}
+
+

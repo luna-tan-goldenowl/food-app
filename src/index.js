@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import App from './core/App';
+// import App from 'core/App';
 import reportWebVitals from './reportWebVitals';
 //import Login from './authen/login';
 // import Footer from './pages/partials/footer';
@@ -10,13 +10,13 @@ import reportWebVitals from './reportWebVitals';
 // import Profile from './pages/profile/profile';
 // import Landing from './pages/landing/index';
 // import Cart from './pages/cart-payment/cart';
-// import Payment from './pages/cart-payment/payment1';
+import Payment from './pages/cart-payment/payment1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Payment />
     </BrowserRouter>
   </React.StrictMode>
 );
