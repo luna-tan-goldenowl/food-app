@@ -1,12 +1,13 @@
 import React from 'react'
-import './style.scss'
-import 'assets/scss/base.scss'
+
 import back from 'assets/image/back.png'
 import time from 'assets/image/times.png'
 import step1 from 'assets/image/step1.png'
 import credit from 'assets/image/credit.png'
 import paypal from 'assets/image/Paypal.png'
 import bank from 'assets/image/bank.png'
+
+import './style.scss';
 
 function payment1() {
   return (
@@ -18,7 +19,7 @@ function payment1() {
         </div>
         <div className='title-head'>
           <h2>Make Payment</h2>
-          <img className='step1' src={step1} alt='icon exit' />
+          <img className='step' src={step1} alt='icon exit' />
         </div>
         <div className='grid payment-infor'>
           <div className='grid__column-6-12'>
@@ -58,7 +59,7 @@ function payment1() {
             <input className='input' type='text' placeholder='Mobile Phone' />
           </div>
         </div>
-        <button className='btn-payment'>Go to Payment</button>
+        <button className='btn-payment '>Go to Payment</button>
       </div>
     </div>
   );

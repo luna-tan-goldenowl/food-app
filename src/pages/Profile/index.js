@@ -1,9 +1,12 @@
 import React from 'react';
-import './profile.scss';
-import Header from 'pages/partials/header';
-import Footer from 'pages/partials/footer';
+
+import Header from 'Components/Header/Header';
+import Footer from 'Components/Footer/Footer';
+
 import coverImage from 'assets/image/coverImage.png';
 import avatar from 'assets/image/avatar.png';
+
+import './style.scss';
 
 function Profile() {
   return (

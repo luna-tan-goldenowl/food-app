@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'assets/scss/base.scss';
+
 import facebook from 'assets/image/facebook.png';
 import instagram from 'assets/image/instagram.png';
+
+import './style.scss';
 
 function Footer() {
   return (
@@ -25,7 +27,7 @@ function Footer() {
           <Link to='/' className='link-to-page'>
             Contact
           </Link>
-          <Link to='/' className='link-to-page'>
+          <Link to='/profile' className='link-to-page'>
             Profile
           </Link>
           <Link to='/' className='link-to-page'>

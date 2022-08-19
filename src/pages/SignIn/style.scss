@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Squada+One&display=swap');
 
-.container {
+.SignIn {
   height: 100vh;
   position: relative;
   width: 100vw;
   color: #1ac073;
   font-family: 'ABeeZee', sans-serif;
+}
+
+.grid {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .content {

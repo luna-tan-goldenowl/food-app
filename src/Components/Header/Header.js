@@ -1,14 +1,16 @@
 import React from 'react';
-import 'assets/scss/base.scss';
-import search from 'assets/image/search.png';
-import bag from 'assets/image/bag.png';
 import { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, Link } from 'react-router-dom';
 import { auth, db, logout } from 'core/firebase';
 import { query, collection, getDocs, where } from 'firebase/firestore';
 
-function Header() {
+import search from 'assets/image/search.png';
+import bag from 'assets/image/bag.png';
+
+import './style.scss';
+
+function Header({setShow}) {
   const [user, loading] = useAuthState(auth);
   const [name, setName] = useState('');
   const navigate = useNavigate();
@@ -57,7 +59,7 @@ function Header() {
       </div>
       <div className='search-and-bag'>
         <img className='search' src={search} alt='search icon' />
-        <img className='bag-cart' src={bag} alt='bag icon' />
+        <img className='bag-cart' src={bag} alt='bag icon' onClick={() => setShow(true)} />
       </div>
     </div>
   );

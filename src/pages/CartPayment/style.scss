@@ -12,6 +12,59 @@
   flex-direction: column;
 }
 
+.grid {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid__column-2-12 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 16.6667%;
+}
+
+.grid__column-7-12 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 58.333%;
+}
+
+.grid__column-7-24 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 50%;
+}
+
+.grid__column-6-12 {
+  padding: 0 10px;
+  width: 50%;
+  text-align: center;
+}
+
+.grid__column-10 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 83.333%;
+}
+
+.grid__column-10-2 {
+  width: 25%;
+  border-radius: 10px;
+}
+
+.grid__column-10-5 {
+  width: 50%;
+}
+
+.grid__column-10-5-3 {
+  width: 16.667%;
+  text-align: center;
+}
+
+.grid__column-4 {
+  width: 30%;
+}
+
 .banner-head {
   width: 100%;
   height: 80vh;
@@ -317,7 +370,7 @@ th {
   align-items: center;
 }
 
-//payment 
+//paymen1 
 
 .popup {
   width: 100vw;
@@ -325,12 +378,13 @@ th {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(34, 34, 34, 0.3);
 }
 
 .payment1 {
-  width: 66.667%;
+  width: 60%;
   border-radius: 10px;
-  background-color: #c0891a;
+  background-color: #fff;
   padding: 40px;
   text-align: center;
 }
@@ -360,8 +414,9 @@ th {
   font-weight: 500;
 }
 
-.step1 {
-  height: 80px;
+.step {
+  height: 100px;
+  margin-left: -30px;
 }
 
 .input {
@@ -389,6 +444,7 @@ th {
 
 .payment-infor {
   display: flex;
+  justify-content:space-between;
 }
 
 .input-address {
@@ -397,13 +453,16 @@ th {
 
 .method {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .method-payment {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  padding: 10px;
+  margin-top: 4px;
+  padding: 0px 10px;
 }
 
 .method p {
@@ -411,7 +470,7 @@ th {
 }
 
 .btn-payment {
-  width: 36%;
+  width: 30%;
   height: 50px;
   border-radius: 8px;
   border: solid 1px transparent;
@@ -420,8 +479,7 @@ th {
   font-size: 20px;
   font-weight: 700;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin: 30px;
 }
 
 .method-checked {
@@ -431,5 +489,52 @@ th {
 .input-checkbox {
   width: 15px;
 }
+
+//payment2
+
+.card-info {
+  text-align: left;
+  color: #999999;
+}
+
+.input-line {
+  width: 84%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  width: 84%;
+}
+
+.input-half {
+  width: 40%;
+  margin: 0;
+}
+
+.save-card {
+  text-align: left;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+//payment3
+
+.payment-success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-success {
+  font-weight: 700;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 20px;
+  color: #223263;
+  margin-top: -20px;
+}
+
 
 

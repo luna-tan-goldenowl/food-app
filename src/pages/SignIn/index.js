@@ -3,9 +3,11 @@ import { auth, logInWithEmailAndPassword, signInWithGoogle, } from 'core/firebas
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './login.scss';
+
 import facebookLogo from 'assets/image/Facebook_logo.png';
 import googleLogo from 'assets/image/Google_logo.png';
+
+import './style.scss';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -28,7 +30,7 @@ function Login() {
   };
 
   return (
-    <div className='container grid'>
+    <div className='SignIn grid'>
       <div className='header'>
         <p className='logo-name'>TBayEAT</p>
       </div>

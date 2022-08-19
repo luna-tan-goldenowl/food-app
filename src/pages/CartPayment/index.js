@@ -1,14 +1,15 @@
 import React from 'react';
-import 'assets/scss/base.scss';
-import './style.scss';
+
 import cooking from 'assets/image/cuate.png';
 import item1 from 'assets/image/item1.png';
 import item2 from 'assets/image/item2.png';
 import item3 from 'assets/image/item3.png';
 import Iresha from 'assets/image/avt_Iresha.png';
 import Gauri from 'assets/image/avt_Gauri.png';
-import Header from 'pages/partials/header';
-import Footer from 'pages/partials/footer';
+import Header from 'Components/Header/Header';
+import Footer from 'Components/Footer/Footer';
+
+import './style.scss';
 
 function Cart() {
   return (

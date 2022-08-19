@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=Squada+One&display=swap');
+
+html {
+  background: rgba(34, 34, 34, 0.3);
+}
+
+.your-cart {
+  background-color:#fff;
+  color: #000;
+  font-family: 'ABeeZee', sans-serif;
+}
+
+.content-wrap {
+  // width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-YourCart {
+  text-align: center;
+  width: 100%;
+}
+
+h2 {
+  font-family: 'ABeeZee', sans-serif;
+  color: #1ac073;
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.icon-exit {
+  border: none;
+  background-color: transparent;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+
+.button-icon:hover {
+  cursor: pointer;
+}
+
+.cart-list {
+  width: 41.667%;
+  background-color: #fff;
+}
+
+.grid-5 {
+  width: 55%;
+  text-align: left;
+}
+
+.grid-5-3 {
+  width: 15%;
+  font-size: 16px;
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  padding: 10px 0px 10px 10px;
+}
+
+.itemInfor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+th {
+  padding: 10px 30px 20px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.image-food-item {
+  width: 34%;
+  height: auto;
+  object-fit: contain;
+}
+
+.qty-minus,
+.qty-plus {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  color: #1ac073;
+  background-color: #f6f7f8;
+  border: 1px solid #f6f7f8;
+}
+
+.qty-minus {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.qty-plus {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.qty-number {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f7f8;
+}
+
+.remove-item {
+  color: red;
+  font-size: 14px;
+}
+
+.item-name {
+  font-size: 14px;
+}
+
+.item-ingredient {
+  line-height: 22px;
+  margin-top: 0px;
+  font-size: 13px;
+  font-weight: 300;
+  color: #929292;
+  font-family: 'Lexend Deca', sans-serif;
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.add-by {
+  color: #929292;
+  margin-right: 10px;
+  font-size: 12px;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.item-food {
+  padding: 10px;
+}
+
+.line-wrap {
+  width: 220%;
+  border-top: 1px solid #f6f7f8;
+}
+
+.pay-total {
+  margin-top: 100px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.voucher {
+  margin-left: 30px;
+}
+
+.voucher-input {
+  height: 40px;
+  width: 240px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  padding-left: 20px;
+  font-size: 16px;
+  color: #929292;
+  border: 1px solid #929292;
+}
+
+.voucher-button {
+  height: 42px;
+  font-size: 16px;
+  background-color: #1ac073;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #1ac073;
+}
+
+.total-price {
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-pay {
+  border-radius: 8px;
+  height: 50px;
+  border: 1px solid #1ac073;
+  background-color: #1ac073;
+  color: #fff;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+  padding: 10px 40px;
+}
+
+.user-add {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.total-info {
+  width: 100%;
+}
+
+.btn-pay {
+  text-align: center;
+}
+
+.pay-infor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-info {
+  margin-top: 20px;
+  padding: 0 30px 0 10px;
+}
+
+.texts {
+  line-height: 30px;
+}
+
+.texts-total {
+  font-weight: 700;
+  margin-top: 10px;
+}

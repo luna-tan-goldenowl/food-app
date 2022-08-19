@@ -2,15 +2,67 @@ html {
   background-color: #f5f5f5 !important;
 }
 
+.grid {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid__column-2-12 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 16.6667%;
+}
+
+.grid__column-7-12 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 58.333%;
+}
+
+.grid__column-7-24 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 50%;
+}
+
+.grid__column-6-12 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 50%;
+  text-align: center;
+}
+
+.grid__column-10 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 83.333%;
+}
+
+.grid__column-10-2 {
+  width: 25%;
+  border-radius: 10px;
+}
+
+.grid__column-10-5 {
+  width: 50%;
+}
+
+.grid__column-10-5-3 {
+  width: 16.667%;
+  text-align: center;
+}
+
+.grid__column-4 {
+  width: 30%;
+}
+
 .content-landing {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.container-landing {
+.Landing {
   background-color: #f5f5f5;
 }
 
@@ -39,6 +91,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: left;
 }
 
 .search-input {
@@ -211,4 +264,12 @@ html {
 
 .load-more:hover {
   cursor: pointer;
+}
+
+.yourCart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100vh;
 }

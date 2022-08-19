@@ -1,5 +1,10 @@
-import 'assets/scss/base.scss';
-import './style.scss';
+import React from 'react';
+import { useState } from 'react';
+
+import Header from 'Components/Header/Header';
+import Footer from 'Components/Footer/Footer';
+import YourCart from 'Pages/YourCart';
+
 import cooking from 'assets/image/cuate.png';
 import pizza1 from 'assets/image/pizza1.png';
 import pizza2 from 'assets/image/pizza2.png';
@@ -11,14 +16,14 @@ import pizza7 from 'assets/image/pizza7.png';
 import pizza8 from 'assets/image/pizza8.png';
 import star from 'assets/image/star.png';
 import add from 'assets/image/add-to-cart.png';
-import Header from 'pages/partials/header';
-import Footer from 'pages/partials/footer';
-import React from 'react';
+
+import './style.scss';
 
 function Landing() {
+  const [show, setShow] = useState(false);
   return (
-    <div className='container-landing grid'>
-      <Header />
+    <div className='Landing grid'>
+      <Header setShow={setShow} />
       <div className='content-landing'>
         <div className='banner-landing'>
           <div className='grid__column-6-12 left-frame '>
@@ -253,6 +258,11 @@ function Landing() {
                 </tr>
               </tbody>
             </table>
+            {show && (
+              <div className='yourCart'>
+                <YourCart setShow={setShow} />
+              </div>
+            )}
           </div>
         </div>
         <button className='load-more'>+ Load more...</button>

@@ -1,15 +1,17 @@
 import React from 'react';
-import 'assets/scss/base.scss';
-import './profile.scss';
+
+import Header from 'Components/Header/Header';
+import Footer from 'Components/Footer/Footer';
+
 import coverImage from 'assets/image/coverImage.png';
 import avatar from 'assets/image/avatar.png';
 import burger from 'assets/image/burger.jpeg';
-import Header from 'pages/partials/header';
-import Footer from 'pages/partials/footer';
+
+import './style.scss';
 
 function History() {
   return (
-    <div className='container'>
+    <div className='History'>
       <Header />
       <div className='image-profile'>
         <img className='cover-image' src={coverImage} alt='cover image' />

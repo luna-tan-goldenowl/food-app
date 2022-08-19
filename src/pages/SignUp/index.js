@@ -8,9 +8,11 @@ import {
   logInWithEmailAndPassword,
   // signInWithFacebook
 } from 'core/firebase';
-import './login.scss';
+
 import facebookLogo from 'assets/image/Facebook_logo.png';
 import googleLogo from 'assets/image/Google_logo.png';
+
+import './style.scss';
 
 function Signup() {
   const [email, setEmail] = useState('');
@@ -38,7 +40,7 @@ function Signup() {
   }, [user, loading]);
 
   return (
-    <div className='container grid'>
+    <div className='SignUp grid'>
       <div className='header'>
         <p className='logo-name'>TBayEAT</p>
       </div>
