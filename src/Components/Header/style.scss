@@ -14,18 +14,23 @@
   align-self: start;
   align-items: center;
   justify-content: space-between;
+  .logo-name {
+    font-family: 'Squada One', cursive;
+    color: #fff;
+    font-size: 28px;
+    margin-left: 150px;
+  }
+  @media (min-width: 768px) and (max-width:1000px) {
+    .logo-name {
+      margin-left: 10px;
+    }
+  }
 }
 
-.logo-name {
-  font-family: 'Squada One', cursive;
-  color: #fff;
-  font-size: 28px;
-  margin-left: 150px;
-}
 
 .search-and-bag {
   display: flex;
-  margin-right: 100px;
+  // margin-right: 100px;
 }
 
 .search,
@@ -44,3 +49,5 @@
   margin: 20px;
   font-size: 18px;
 }
+
+

@@ -14,14 +14,17 @@ function Header({setShow}) {
   const [user, loading] = useAuthState(auth);
   const [name, setName] = useState('');
   const navigate = useNavigate();
-  const fetchUserName = async (e) => {
+  const fetchUserName = async () => {
     try {
-      e.preventDefault();
-      if (!name) alert('Please enter name');
-      const q = query(collection(db, 'users'), where('uid', '==', user?.uid));
+      // e.preventDefault();
+      // if (!name) alert('Please enter name');
+      // console.log('thằng này là q hả');
+      const q = query(collection(db, 'users'), where('uid', '==', user.uid));
+      //console.log('thằng này là q', q);
       const doc = await getDocs(q);
       const data = doc.docs[0].data();
       setName(data.name);
+      console.log(name);
     } catch (err) {
       console.error(err);
       alert('An error occured while fetching user data');
@@ -30,6 +33,7 @@ function Header({setShow}) {
   useEffect(() => {
     if (loading) return;
     if (!user) return navigate('/');
+    console.log('user nè', user);
     fetchUserName();
   }, [user, loading]);
   return (
