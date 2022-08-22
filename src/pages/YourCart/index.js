@@ -4,8 +4,8 @@ import item1 from 'assets/image/item1.png';
 import item2 from 'assets/image/item2.png';
 import item3 from 'assets/image/item3.png';
 import time from 'assets/image/times.png';
-import Iresha from 'assets/image/avt_Iresha.png';
-import Gauri from 'assets/image/avt_Gauri.png';
+// import Iresha from 'assets/image/avt_Iresha.png';
+// import Gauri from 'assets/image/avt_Gauri.png';
 
 import './style.scss';
 
@@ -71,7 +71,7 @@ function YourCart({setShow}) {
                   </div>
                   <div className='user-add'>
                     <p className='add-by'>Add by Iresha</p>
-                    <img src={Iresha} alt='' />
+                    {/* <img src={Iresha} alt='' /> */}
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ function YourCart({setShow}) {
                   </div>
                   <div className='user-add'>
                     <p className='add-by'>Add by Gauri</p>
-                    <img src={Gauri} alt='' />
+                    {/* <img src={Gauri} alt='' /> */}
                   </div>
                 </div>
               </div>

@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=Squada+One&display=swap');
-
-html {
-  background: rgba(34, 34, 34, 0.3);
-}
+@import 'assets/scss/mixin.scss';
 
 .your-cart {
   background-color:#fff;
@@ -16,7 +13,7 @@ html {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  justify-content: center;
+  justify-content:flex-start;
 }
 
 .title-YourCart {
@@ -52,15 +49,35 @@ h2 {
   background-color: #fff;
 }
 
+.cart-list {
+  @include responsive(tablet) {
+    width: 60%;
+  }
+}
+
 .grid-5 {
   width: 55%;
   text-align: left;
 }
 
+.grid-5 {
+  @include responsive(tablet) {
+    width: 64%;
+  }
+}
+
 .grid-5-3 {
   width: 15%;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
+}
+
+.grid-5-3{
+  @include responsive(tablet) {
+    width: 12%;
+    font-size: 14px;
+    text-align: center;
+  }
 }
 
 .cart-item {
@@ -74,6 +91,12 @@ h2 {
   justify-content: space-between;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.itemInfor {
+  @include responsive(tablet) {
+    margin-right: 0px;
+  }
 }
 
 th {
@@ -133,8 +156,14 @@ th {
   font-size: 14px;
 }
 
+.item-name {
+  @include responsive(tablet) {
+    font-size: 13px;
+  }
+}
+
 .item-ingredient {
-  line-height: 22px;
+  line-height: 20px;
   margin-top: 0px;
   font-size: 13px;
   font-weight: 300;
@@ -145,6 +174,12 @@ th {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+.item-ingredient {
+  @include responsive(tablet) {
+    font-size: 12px;
+  }
 }
 
 .add-by {
@@ -234,11 +269,11 @@ th {
 .pay-infor {
   display: flex;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
 .total-info {
   margin-top: 20px;
-  padding: 0 30px 0 10px;
 }
 
 .texts {

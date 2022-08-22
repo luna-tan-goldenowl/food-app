@@ -16,11 +16,7 @@ function Header({setShow}) {
   const navigate = useNavigate();
   const fetchUserName = async () => {
     try {
-      // e.preventDefault();
-      // if (!name) alert('Please enter name');
-      // console.log('thằng này là q hả');
       const q = query(collection(db, 'users'), where('uid', '==', user.uid));
-      //console.log('thằng này là q', q);
       const doc = await getDocs(q);
       const data = doc.docs[0].data();
       setName(data.name);

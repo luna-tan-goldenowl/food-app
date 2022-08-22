@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Squada+One&display=swap');
+@import 'assets/scss/mixin.scss';
 
 * {
   padding: 0;
@@ -7,7 +8,7 @@
 }
 
 .header {
-  width: 100%;
+  // width: 100vw;
   height: 9vh;
   background-color: #1ac073;
   display: flex;
@@ -20,22 +21,27 @@
     font-size: 28px;
     margin-left: 150px;
   }
-  @media (min-width: 768px) and (max-width:1000px) {
-    .logo-name {
+  .logo-name {
+    @include responsive(tablet) {
       margin-left: 10px;
+    }
+  }
+  .search-and-bag {
+    margin-right: 80px;
+  }
+  
+  .search-and-bag {
+    @include responsive(tablet) {
+      margin: 0px;
     }
   }
 }
 
 
-.search-and-bag {
-  display: flex;
-  // margin-right: 100px;
-}
 
 .search,
 .bag-cart {
-  margin: 20px;
+  margin: 10px;
 }
 
 .search:hover,

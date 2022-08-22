@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Squada+One&display=swap');
+@import 'assets/scss/mixin.scss';
 
 * {
   padding: 0;
@@ -25,48 +26,64 @@
     align-items: center;
     justify-content: space-between;
   }
+  .footer {
+    @include responsive(tablet) {
+      height: 10vh;
+      background-color: #1ac073;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
   .logo-name {
     font-family: 'Squada One', cursive;
     color: #fff;
     font-size: 28px;
     margin-left: 150px;
   }
-  @media (min-width: 768px) and (max-width:1000px) {
-    .logo-name {
+  .logo-name {
+    @include responsive(tablet) {
       margin-left: 10px;
     }
+  }
+  
+  .social {
+    display: flex;
+    align-items: center;
+    margin-right: 90px;
+  }
+
+  .social {
+    @include responsive(tablet) {
+      margin-right: 0px;
+    }
+  }
+
+  .facebook,
+  .instagram {
+    margin: 10px;
+  }
+
+  .foot-line {
+    width: 88vw;
+    border-top: 1px solid #fff;
+  }
+  
+  .line-footer {
+    display: flex;
+    width: 100%;
+    background-color: #1ac073;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 
 
-.social {
-  display: flex;
-  align-items: center;
-  margin-right: 90px;
-}
-
-.facebook,
-.instagram {
-  margin: 20px;
-}
 
 .facebook:hover,
 .instagram:hover {
   cursor: pointer;
-}
-
-.foot-line {
-  width: 88vw;
-  border-top: 1px solid #fff;
-}
-
-.line-footer {
-  display: flex;
-  width: 100%;
-  background-color: #1ac073;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .copyright {

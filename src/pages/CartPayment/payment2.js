@@ -24,14 +24,14 @@ function payment2() {
             <img className='card' src={CreditCard} alt='Credit card' />
           </div>
           <div className='grid__column-6-12 card-info'>
-            <input className='input' type='text' placeholder='Card Number' />
+            <input className='inputs' type='text' placeholder='Card Number' />
             <br />
             <div className='input-line'>
-              <input className='input input-half' type='text' placeholder='Expiry' />
-              <input className='input input-half' type='text' placeholder='CVV' />
+              <input className='inputs input-half' type='text' placeholder='Expiry' />
+              <input className='inputs input-half' type='text' placeholder='CVV' />
             </div>
             <br />
-            <input className='input' type='text' placeholder='Holder Number' />
+            <input className='inputs' type='text' placeholder='Holder Number' />
             <div className='save-card'>
               <input className='input-checkbox' type='checkbox' />
               <p className='saveCard-title'>Save this credit card</p>

@@ -259,8 +259,10 @@ function Landing() {
               </tbody>
             </table>
             {show && (
-              <div className='yourCart'>
-                <YourCart setShow={setShow} />
+              <div className='back-drop' onClick={() => setShow(false)}>
+                <div className='yourCart'>
+                  <YourCart setShow={setShow} />
+                </div>
               </div>
             )}
           </div>
