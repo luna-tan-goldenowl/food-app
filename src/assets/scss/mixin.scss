@@ -1,0 +1,58 @@
+
+$max-small-mobile-width: 320px;
+$max-middle-mobile-width: 425px;
+$min-tablet-width: 768px;
+// $max-tablet-width: 1118px;
+$max-tablet-width: 1024px;
+$min-medium-desktop: 1680px;
+$max-medium-desktop: 2160px;
+
+//breakpoint: 768, 1440, 1920, 2560
+
+@mixin responsive($screen) {
+  @if $screen==mobile {
+    @media only screen and (max-width: ($min-tablet-width - 1)) {
+      @content;
+    }
+  }
+
+  @if $screen==tablet {
+    @media only screen and (min-width: $min-tablet-width) and (max-width: ($max-tablet-width - 1)) {
+      @content;
+    }
+  }
+
+  @if $screen==small_desktop {
+    @media only screen and (min-width: $max-tablet-width) and (max-width: ($min-medium-desktop - 1)) {
+      @content;
+    }
+  }
+
+  @if $screen==medium_desktop {
+    @media only screen and (min-width: $min_medium-desktop) and (max-width: ($max-medium-desktop - 1)) {
+      @content;
+    }
+  }
+
+  @if $screen==large_desktop {
+    @media only screen and (min-width: $max-medium-desktop) {
+      @content;
+    }
+  }
+
+  @if $screen==retina {
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      @content;
+    }
+  }
+}
+
+@mixin multiple-responsive($screens...) {
+  @each $screen in $screens {
+    @include responsive($screen) {
+      @content;
+    }
+  }
+}

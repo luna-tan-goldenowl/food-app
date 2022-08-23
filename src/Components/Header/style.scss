@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Squada+One&display=swap');
+@import 'assets/scss/mixin.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  // width: 100vw;
+  height: 9vh;
+  background-color: #1ac073;
+  display: flex;
+  align-self: start;
+  align-items: center;
+  justify-content: space-between;
+  .logo-name {
+    font-family: 'Squada One', cursive;
+    color: #fff;
+    font-size: 28px;
+    margin-left: 150px;
+  }
+  .logo-name {
+    @include responsive(tablet) {
+      margin-left: 10px;
+    }
+  }
+  .search-and-bag {
+    margin-right: 80px;
+  }
+  
+  .search-and-bag {
+    @include responsive(tablet) {
+      margin: 0px;
+    }
+  }
+}
+
+
+
+.search,
+.bag-cart {
+  margin: 10px;
+}
+
+.search:hover,
+.bag-cart:hover {
+  cursor: pointer;
+}
+
+.link-to-page {
+  color: #fff;
+  text-decoration: none;
+  margin: 20px;
+  font-size: 18px;
+}
+
+
