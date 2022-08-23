@@ -1,19 +1,21 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import {db } from 'core/firebase';
+import {collection, getDocs} from 'firebase/firestore';
 
 import Header from 'Components/Header/Header';
 import Footer from 'Components/Footer/Footer';
 import YourCart from 'Pages/YourCart';
 
 import cooking from 'assets/image/cuate.png';
-import pizza1 from 'assets/image/pizza1.png';
-import pizza2 from 'assets/image/pizza2.png';
-import pizza3 from 'assets/image/pizza3.png';
-import pizza4 from 'assets/image/pizza4.png';
-import pizza5 from 'assets/image/pizza5.png';
-import pizza6 from 'assets/image/pizza6.png';
-import pizza7 from 'assets/image/pizza7.png';
-import pizza8 from 'assets/image/pizza8.png';
+// import pizza1 from 'assets/image/pizza1.png';
+// import pizza2 from 'assets/image/pizza2.png';
+// import pizza3 from 'assets/image/pizza3.png';
+// import pizza4 from 'assets/image/pizza4.png';
+// import pizza5 from 'assets/image/pizza5.png';
+// import pizza6 from 'assets/image/pizza6.png';
+// import pizza7 from 'assets/image/pizza7.png';
+// import pizza8 from 'assets/image/pizza8.png';
 import star from 'assets/image/star.png';
 import add from 'assets/image/add-to-cart.png';
 
@@ -21,6 +23,20 @@ import './style.scss';
 
 function Landing() {
   const [show, setShow] = useState(false);
+  const [foodData, setFoodData] = useState([]);
+
+  const getData = async () => {
+    const querySnapshot = await getDocs(collection(db, 'food-item'));
+    querySnapshot.forEach(doc => {
+      // console.log('doc:', doc.data());
+      setFoodData(foodData => [...foodData, doc.data()]);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className='Landing grid'>
       <Header setShow={setShow} />
@@ -48,7 +64,7 @@ function Landing() {
             <img className='image-cooking' src={cooking} alt='' />
           </div>
         </div>
-        <div className='body-content grid__column-10'>
+        <div className='body-content'>
           <div>
             <p className='title-trending'>Trending today</p>
           </div>
@@ -64,33 +80,40 @@ function Landing() {
             <option value=''></option>
           </select>
           <div className='food-menu'>
-            <table className='grid__column-10'>
+            <table>
               <tbody>
-                <tr className=''>
-                  <td className=' grid__column-10-2'>
-                    <div className='food-item'>
-                      <img className='image-food' src={pizza1} alt='' />
-                      <div className='food-item-infor'>
-                        <div className='foodname-price'>
-                          <p>Home made pizza</p>
-                          <p>$19</p>
-                        </div>
-                        <div className='vote-time-add'>
-                          <div className='vote-and-time'>
-                            <p className='vote'>
-                              <img className='vote-star' src={star} alt={name} />
-                              4.7
-                            </p>
-                            <p>50-79 min</p>
+                <tr className='grid__column-10'>
+                  {foodData.map((item, i) => {
+                    // console.log('item nè, ', item, 'name nè', item.foodName);
+                    return (
+                      <div className='grid__column-10-2' key={i}>
+                        <td>
+                          <div className='food-item'>
+                            <img className='image-food' src={item.foodImg} alt='' />
+                            <div className='food-item-infor'>
+                              <div className='foodname-price'>
+                                <p>{item.foodName}</p>
+                                <p>{item.price}</p>
+                              </div>
+                              <div className='vote-time-add'>
+                                <div className='vote-and-time'>
+                                  <p className='vote'>
+                                    <img className='vote-star' src={star} alt='star' />
+                                    {item.star}
+                                  </p>
+                                  <p>{item.time}</p>
+                                </div>
+                                <button className='add-to-cart'>
+                                  <img src={add} alt='' />
+                                </button>
+                              </div>
+                            </div>
                           </div>
-                          <button className='add-to-cart'>
-                            <img src={add} alt='' />
-                          </button>
-                        </div>
+                        </td>
                       </div>
-                    </div>
-                  </td>
-                  <td className=' grid__column-10-2'>
+                    );
+                  })}
+                  {/* <td className=' grid__column-10-2'>
                     <div className='food-item'>
                       <img className='image-food' src={pizza2} alt='' />
                       <div className='food-item-infor'>
@@ -158,10 +181,10 @@ function Landing() {
                         </div>
                       </div>
                     </div>
-                  </td>
+                  </td> */}
                 </tr>
               </tbody>
-              <tbody>
+              {/* <tbody>
                 <tr>
                   <td className=' grid__column-10-2'>
                     <div className='food-item'>
@@ -256,7 +279,7 @@ function Landing() {
                     </div>
                   </td>
                 </tr>
-              </tbody>
+              </tbody> */}
             </table>
             {show && (
               <div className='back-drop' onClick={() => setShow(false)}>

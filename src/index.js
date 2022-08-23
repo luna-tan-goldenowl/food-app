@@ -2,22 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-// import App from 'core/App';
+import App from 'core/App';
 import reportWebVitals from './reportWebVitals';
 //import Login from './authen/login';
 // import Footer from './pages/partials/footer';
-//import OrderHistory from 'Pages/History/index';
+// import OrderHistory from 'Pages/History/index';
 //import Profile from 'Pages/Profile/index';
-import Landing from './Pages/Landing/index';
-//import Cart from 'Pages/CartPayment/index';
+//import Landing from './Pages/Landing/index';
+// import Cart from 'Pages/CartPayment/index';
 //import Payment from './Pages/CartPayment/payment2';
-//import YourCart from './Pages/YourCart/index'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Landing />
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );

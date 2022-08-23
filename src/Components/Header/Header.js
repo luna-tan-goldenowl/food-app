@@ -3,14 +3,15 @@ import { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, Link } from 'react-router-dom';
 import { auth, db, logout } from 'core/firebase';
-import { query, collection, getDocs, where } from 'firebase/firestore';
+import { query, collection, getDocs, where} from 'firebase/firestore';
 
 import search from 'assets/image/search.png';
 import bag from 'assets/image/bag.png';
 
 import './style.scss';
 
-function Header({setShow}) {
+function Header({ setShow }) {
+
   const [user, loading] = useAuthState(auth);
   const [name, setName] = useState('');
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ function Header({setShow}) {
     console.log('user nè', user);
     fetchUserName();
   }, [user, loading]);
+
   return (
     <div className='header'>
       <div>

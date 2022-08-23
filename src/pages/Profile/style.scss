@@ -70,6 +70,7 @@ html {
 
 .content {
   height: 92vh;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +106,7 @@ html {
 }
 
 .cover-image {
-  width: 100vw;
+  width: 100%;
   height: auto;
   object-fit: contain;
   background-size: cover;
