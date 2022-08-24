@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import {
   GoogleAuthProvider,
-  // FacebookAuthProvider,
+  FacebookAuthProvider,
   getAuth,
   signInWithPopup,
   signInWithEmailAndPassword,
@@ -25,7 +25,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
-// const facebookProvider = new FacebookAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, googleProvider);
@@ -42,33 +42,34 @@ const signInWithGoogle = async () => {
     }
     console.log(res.user);
   } catch (err) {
-    console.error(err);
-    //alert(err.message);
+    alert(err.message);
   }
 };
 
-// const signInWithFacebook = async () => {
-//   try {
-//     const res = await signInWithPopup(auth, googleProvider);
-//     const credential = FacebookAuthProvider.credentialFromResult(res);
-//     const token = credential.accessToken;
-//     const user = res.user;
-//   } catch (err) {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // The email of the user's account used.
-//     const email = error.customData.email;
-//     // AuthCredential type that was used.
-//     const credential = FacebookAuthProvider.credentialFromError(error);
-//   }
-// };
+const signInWithFacebook = async () => {
+  try {
+    const res = await signInWithPopup(auth, facebookProvider);
+    const user = res.user;
+    const q = query(collection(db, 'users'), where('uid', '==', user.uid));
+    const docs = await getDocs(q);
+    if (docs.docs.length === 0) {
+      await addDoc(collection(db, 'users'), {
+        uid         : user.uid,
+        name        : user.displayName,
+        authProvider: 'facebook',
+        email       : user.email
+      });
+    }
+  } catch (err) {
+    alert(err.message);
+  }
+};
 
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
-    console.error(err);
-    //alert(err.message);
+    alert(err.message);
   }
 };
 
@@ -86,8 +87,7 @@ const registerWithEmailAndPassword = async (name, email, password, phonenumber) 
       password    : password
     });
   } catch (err) {
-    console.error(err);
-    //alert(err.message);
+    alert(err.message);
   }
 };
 
@@ -96,8 +96,7 @@ const sendPasswordReset = async email => {
     await sendPasswordResetEmail(auth, email);
     alert('Password reset link sent!');
   } catch (err) {
-    console.error(err);
-    //alert(err.message);
+    alert(err.message);
   }
 };
 
@@ -109,7 +108,7 @@ export {
   auth,
   db,
   signInWithGoogle,
-  // signInWithFacebook,
+  signInWithFacebook,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordReset,

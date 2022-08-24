@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Header from 'Components/Header/Header';
 import Footer from 'Components/Footer/Footer';
@@ -9,6 +10,10 @@ import avatar from 'assets/image/avatar.png';
 import './style.scss';
 
 function Profile() {
+  const navigate = useNavigate();
+  const redirectHistory = () => {
+    return navigate('/history');
+  };
   return (
     <div className='container grid'>
       {/* <div className="header">
@@ -20,7 +25,9 @@ function Profile() {
         <img className='avatar-image' src={avatar} alt='avatar' />
         <div className='tab'>
           <button className='tab-profile active'>Profile</button>
-          <button className='tab-history'>Odder History</button>
+          <button className='tab-history' onClick={redirectHistory}>
+            Odder History
+          </button>
         </div>
       </div>
       <div className='content'>

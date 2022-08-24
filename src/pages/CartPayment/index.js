@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 
 import cooking from 'assets/image/cuate.png';
 import item1 from 'assets/image/item1.png';
@@ -8,14 +9,21 @@ import Iresha from 'assets/image/avt_Iresha.png';
 import Gauri from 'assets/image/avt_Gauri.png';
 import Header from 'Components/Header/Header';
 import Footer from 'Components/Footer/Footer';
+import Payment1 from './payment1';
+import Payment2 from './payment2';
+import Payment3 from './payment3';
 
 import './style.scss';
 
 function Cart() {
+  const [showPayment1, setShowPayment1] = useState(false);
+  const [showPayment2, setShowPayment2] = useState(false);
+  const [showPayment3, setShowPayment3] = useState(false);
+  console.log('pm1', showPayment1);
   return (
     <div className='cart-container grid'>
       <Header />
-      <div className='content-wrap'>
+      <div className='contentCart'>
         <div className='banner-head'>
           <div className='grid__column-6-12 left-grid '>
             <h1 className='slogan'>
@@ -39,7 +47,7 @@ function Cart() {
             <img className='image-cooking' src={cooking} alt='' />
           </div>
         </div>
-        <div className='grid__column-10'>
+        <div className='grid-10'>
           <div className='title-items'>
             <p className=''>Home / </p>
             <p className=''> Trending / </p>
@@ -48,7 +56,7 @@ function Cart() {
           <div className='cart-itemlist'>
             <table className='grid__column'>
               <tbody>
-                <tr className='grid__column-10'>
+                <tr className='grid-10'>
                   <th className='grid__column-10-5'>PRODUCT</th>
                   <th className='grid__column-10-5-3'>PRICE</th>
                   <th className='grid__column-10-5-3'>QTY</th>
@@ -57,7 +65,7 @@ function Cart() {
                 <div className='line-wrap'></div>
               </tbody>
               <tbody>
-                <tr className='grid__column-10 item-food'>
+                <tr className='grid-10 item-food'>
                   <td className='grid__column-10-5'>
                     <div className='cart-item'>
                       <img className='image-food-item' src={item1} alt='image item 1' />
@@ -88,7 +96,7 @@ function Cart() {
                 <div className='line-wrap'></div>
               </tbody>
               <tbody>
-                <tr className='grid__column-10 item-food'>
+                <tr className='grid-10 item-food'>
                   <td className='grid__column-10-5'>
                     <div className='cart-item'>
                       <img className='image-food-item' src={item2} alt='image item 1' />
@@ -117,7 +125,7 @@ function Cart() {
                 <div className='line-wrap'></div>
               </tbody>
               <tbody>
-                <tr className='grid__column-10 item-food'>
+                <tr className='grid-10 item-food'>
                   <td className='grid__column-10-5'>
                     <div className='cart-item'>
                       <img className='image-food-item' src={item3} alt='image item 1' />
@@ -173,12 +181,44 @@ function Cart() {
                 <div className='text-total'>$118</div>
               </div>
               <button className='button-payYour'>Pay Your Portion: $20</button>
-              <button className='button-payAll '>Pay All: $118</button>
+              <button className='button-payAll ' onClick={() => setShowPayment1(true)}>
+                Pay All: $118
+              </button>
             </div>
           </div>
         </div>
+        <div className='grid'>
+          <Footer />
+        </div>
       </div>
-      <Footer />
+      {showPayment1 && (
+        // onClick={() => setShowPayment1(false)}
+        <div className='backDrop'>
+          <div className='payment-1'>
+            <Payment1 setShowPayment1={setShowPayment1} setShowPayment2={setShowPayment2} />
+          </div>
+        </div>
+      )}
+      {showPayment2 && (
+        //onClick={() => setShowPayment2(false)}
+        <div className='backDrop'>
+          <div className='payment-2'>
+            <Payment2
+              setShowPayment2={setShowPayment2}
+              setShowPayment3={setShowPayment3}
+              setShowPayment1={setShowPayment1}
+            />
+          </div>
+        </div>
+      )}
+      {showPayment3 && (
+        //onClick={() => setShowPayment2(false)}
+        <div className='backDrop'>
+          <div className='payment-3'>
+            <Payment3 setShowPayment3={setShowPayment3} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

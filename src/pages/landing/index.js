@@ -33,16 +33,16 @@ function Landing() {
     });
   };
 
-  useEffect(() => {
+  useEffect(() => {  
     getData();
-  }, []);
+  },[]);
 
   return (
     <div className='Landing grid'>
       <Header setShow={setShow} />
       <div className='content-landing'>
         <div className='banner-landing'>
-          <div className='grid__column-6-12 left-frame '>
+          <div className='left-frame '>
             <h1 className='slogan'>
               Authentic local
               <br />
@@ -82,7 +82,7 @@ function Landing() {
           <div className='food-menu'>
             <table>
               <tbody>
-                <tr className='grid__column-10'>
+                <tr className='grid__column--10'>
                   {foodData.map((item, i) => {
                     // console.log('item nè, ', item, 'name nè', item.foodName);
                     return (
@@ -282,7 +282,8 @@ function Landing() {
               </tbody> */}
             </table>
             {show && (
-              <div className='back-drop' onClick={() => setShow(false)}>
+              <div className='back-drop'>
+                <div className='back-drop-YourCart' onClick={() => setShow(false)}></div>
                 <div className='yourCart'>
                   <YourCart setShow={setShow} />
                 </div>

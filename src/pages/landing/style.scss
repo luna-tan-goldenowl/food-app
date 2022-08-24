@@ -34,7 +34,7 @@ html {
   text-align: center;
 }
 
-.grid__column-10 {
+.grid__column--10 {
   padding-left: 5px;
   padding-right: 5px;
   width: 100%;
@@ -48,7 +48,7 @@ html {
   }
 }
 
-.grid__column-10 {
+.grid__column--10 {
   @include responsive(tablet) {
     width: 100%;
   }
@@ -71,6 +71,7 @@ html {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #f5f5f5;
   .Landing {
     background-color: #f5f5f5;
   }
@@ -84,12 +85,13 @@ html {
   
   .banner-landing {
     @include responsive(tablet) {
-      height: 40vh;
+      height: 50vh;
     }
   }
 }
 
 .left-frame {
+  width: 50%;
   padding: 50px 100px 100px;
   display: flex;
   flex-direction: column;
@@ -236,6 +238,14 @@ html {
   background-color: #f5f5f5;
 }
 
+.body-content {
+  @include responsive(tablet) {
+    padding-right: 10px;
+    margin: 0;
+    margin-top: 60px;
+  }
+}
+
 .food-menu table {
   table-layout: fixed;
   width: 100%;
@@ -252,7 +262,7 @@ html {
 .foodname-price {
   color: #000;
   display: flex;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   justify-content: space-between;
   margin-top: 16px;
@@ -293,6 +303,10 @@ html {
 .add-to-cart {
   border: none;
   background-color: transparent;
+}
+
+.add-to-cart:hover {
+  cursor: pointer;
 }
 
 .vote-and-time p {
@@ -353,6 +367,15 @@ html {
   top: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(34, 34, 34, 0.3);
+  // background: rgba(34, 34, 34, 0.3);
+  // margin-left: -20%;
+}
+
+.back-drop-YourCart {
+  position: fixed;
+  top: 0;
+  width: 78.333%;
   margin-left: -20%;
+  height: 100vh;
+  background: rgba(34, 34, 34, 0.3);
 }

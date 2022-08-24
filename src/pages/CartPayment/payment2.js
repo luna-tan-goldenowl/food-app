@@ -7,13 +7,21 @@ import CreditCard from 'assets/image/CreditCard.png';
 
 import './style.scss';
 
-function payment2() {
+function payment2({ setShowPayment1, setShowPayment2, setShowPayment3 }) {
   return (
     <div className='popup'>
       <div className='payment1 '>
         <div className='icon'>
-          <img className='button-icon' src={back} alt='icon back' />
-          <img className='button-icon' src={time} alt='icon exit' />
+          <img
+            className='button-icon'
+            src={back}
+            alt='icon back'
+            onClick={() => {
+              setShowPayment1(true);
+              setShowPayment2(false);
+            }}
+          />
+          <img className='button-icon' src={time} alt='icon exit' onClick={() => setShowPayment2(false)} />
         </div>
         <div className='title-head'>
           <h2>Make Payment</h2>
@@ -38,7 +46,15 @@ function payment2() {
             </div>
           </div>
         </div>
-        <button className='btn-payment '>Confirm</button>
+        <button
+          className='btn-payment '
+          onClick={() => {
+            setShowPayment3(true);
+            setShowPayment2(false);
+          }}
+        >
+          Confirm
+        </button>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import {
   registerWithEmailAndPassword,
   signInWithGoogle,
   logInWithEmailAndPassword,
-  // signInWithFacebook
+  signInWithFacebook
 } from 'core/firebase';
 
 import facebookLogo from 'assets/image/Facebook_logo.png';
@@ -49,7 +49,7 @@ function Signup() {
         <p className='small-title'>Sign up and hop on the food journey!</p>
         <form action=''>
           <input
-            className='input'
+            className='input-signup'
             type='text'
             name='user'
             value={name}
@@ -58,7 +58,7 @@ function Signup() {
           />
           <br />
           <input
-            className='input'
+            className='input-signup'
             type='password'
             name='password'
             value={password}
@@ -67,7 +67,7 @@ function Signup() {
           />
           <br />
           <input
-            className='input'
+            className='input-signup'
             type='password'
             name='confirm-password'
             id='confirm-password'
@@ -75,7 +75,7 @@ function Signup() {
           />
           <br />
           <input
-            className='input'
+            className='input-signup'
             type='text'
             name='email'
             value={email}
@@ -84,7 +84,7 @@ function Signup() {
           />
           <br />
           <input
-            className='input'
+            className='input-signup'
             type='text'
             name='phone-number'
             id='phone-number'
@@ -101,7 +101,7 @@ function Signup() {
           <button className='button-social' onClick={signInWithGoogle}>
             <img className='social-logo' src={googleLogo} alt='Logo google' />
           </button>
-          <button className='button-social'>
+          <button className='button-social' onClick={signInWithFacebook}>
             <img className='social-logo' src={facebookLogo} alt='Logo facebook' />
           </button>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth, logInWithEmailAndPassword, signInWithGoogle, } from 'core/firebase';
+import { auth, logInWithEmailAndPassword, signInWithGoogle, signInWithFacebook } from 'core/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
@@ -39,7 +39,7 @@ function Login() {
         <p className='small-title'>Sign in and start your food adventure!</p>
         <form action=''>
           <input
-            className='input'
+            className='input-login'
             type='text'
             name='email'
             value={email}
@@ -48,7 +48,7 @@ function Login() {
           />
           <br />
           <input
-            className='input'
+            className='input-login'
             type='password'
             name='password'
             value={password}
@@ -71,7 +71,7 @@ function Login() {
           <button className='button-social' onClick={signInWithGoogle}>
             <img className='social-logo' src={googleLogo} alt='Logo facebook' />
           </button>
-          <button className='button-social' >
+          <button className='button-social' onClick={signInWithFacebook}>
             <img className='social-logo' src={facebookLogo} alt='Logo facebook' />
           </button>
         </div>

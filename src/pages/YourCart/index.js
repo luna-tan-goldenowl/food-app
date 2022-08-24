@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import item1 from 'assets/image/item1.png';
 import item2 from 'assets/image/item2.png';
@@ -9,7 +10,11 @@ import time from 'assets/image/times.png';
 
 import './style.scss';
 
-function YourCart({setShow}) {
+function YourCart({ setShow }) {
+  const navigate = useNavigate();
+  const redirectCart = () => {
+    return navigate('/cart');
+  };
   return (
     <div className='content-wrap your-cart'>
       <button className='icon-exit' onClick={() => setShow(false)}>
@@ -31,7 +36,7 @@ function YourCart({setShow}) {
         <tbody>
           <tr className='item-food cart-list'>
             <td className='grid-5'>
-              <div className='cart-item'>
+              <div className='cartItem'>
                 <img className='image-food-item' src={item1} alt='image item 1' />
                 <div className='itemInfor'>
                   <div className='item-info'>
@@ -62,7 +67,7 @@ function YourCart({setShow}) {
         <tbody>
           <tr className='grid-5 item-food'>
             <td className='grid-5'>
-              <div className='cart-item'>
+              <div className='cartItem'>
                 <img className='image-food-item' src={item2} alt='image item 1' />
                 <div className='itemInfor'>
                   <div className='item-info'>
@@ -91,7 +96,7 @@ function YourCart({setShow}) {
         <tbody>
           <tr className=' item-food'>
             <td className='grid-5'>
-              <div className='cart-item'>
+              <div className='cartItem'>
                 <img className='image-food-item' src={item3} alt='image item 1' />
                 <div className='itemInfor'>
                   <div className='item-info'>
@@ -131,7 +136,7 @@ function YourCart({setShow}) {
           <div className='texts texts-total'>$118</div>
         </div>
         <div className='btn-pay'>
-          <button className='button-pay'>Go to Payment</button>
+          <button className='button-pay' onClick={redirectCart}>Go to Payment</button>
         </div>
       </div>
     </div>

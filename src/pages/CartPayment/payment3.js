@@ -7,13 +7,21 @@ import success from 'assets/image/Success.png';
 
 import './style.scss';
 
-function payment3() {
+function payment3({ setShowPayment2, setShowPayment3 }) {
   return (
     <div className='popup'>
       <div className='payment1 '>
         <div className='icon'>
-          <img className='button-icon' src={back} alt='icon back' />
-          <img className='button-icon' src={time} alt='icon exit' />
+          <img
+            className='button-icon'
+            src={back}
+            alt='icon back'
+            onClick={() => {
+              setShowPayment2(true);
+              setShowPayment3(false);
+            }}
+          />
+          <img className='button-icon' src={time} alt='icon exit' onClick={() => setShowPayment3(false)} />
         </div>
         <div className='title-head'>
           <h2>Make Payment</h2>

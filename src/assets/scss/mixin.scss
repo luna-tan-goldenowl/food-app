@@ -17,7 +17,7 @@ $max-medium-desktop: 2160px;
   }
 
   @if $screen==tablet {
-    @media only screen and (min-width: $min-tablet-width) and (max-width: ($max-tablet-width - 1)) {
+    @media only screen and (min-width: $min-tablet-width) and (max-width: ($max-tablet-width)) {
       @content;
     }
   }

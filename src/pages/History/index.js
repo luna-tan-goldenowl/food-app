@@ -1,5 +1,6 @@
-/* eslint-disable no-unused-vars */
+
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Header from 'Components/Header/Header';
 import Footer from 'Components/Footer/Footer';
@@ -11,6 +12,10 @@ import burger from 'assets/image/burger.jpeg';
 import './style.scss';
 
 function History() {
+  const navigate = useNavigate();
+  const redirectProfile = () => {
+    return navigate('/profile');
+  };
   return (
     <div className='History'>
       <Header />
@@ -18,7 +23,7 @@ function History() {
         <img className='cover-image' src={coverImage} alt='cover image' />
         <img className='avatar-image' src={avatar} alt='avatar' />
         <div className='tab'>
-          <button className='tab-profile'>Profile</button>
+          <button className='tab-profile' onClick={redirectProfile}>Profile</button>
           <button className='tab-history active'>Odder History</button>
         </div>
       </div>
